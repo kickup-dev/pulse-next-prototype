@@ -1,9 +1,7 @@
-
 import App from 'next/app'
 import React, {Fragment} from 'react'
-import { ThemeProvider } from 'styled-components'
 import { Reset } from 'styled-reset';
-import theme from '../theme';
+import ThemeProvider from '../componentLibrary/ThemeProvider';
 
 export default class MyApp extends App {
   render () {
@@ -11,7 +9,7 @@ export default class MyApp extends App {
     return (
       <Fragment>
         <Reset/>
-        <ThemeProvider theme={theme}>
+        <ThemeProvider>
           <Component {...pageProps} />
         </ThemeProvider>
       </Fragment>

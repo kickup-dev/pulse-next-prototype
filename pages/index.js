@@ -1,11 +1,13 @@
+import { Heading, Paragraph } from '../componentLibrary/text';
+
 export default () => (
   <div>
-    <h1>Hello World</h1>
-    <p>
+    <Heading>Hello World</Heading>
+    <Paragraph>
       Unfortunately, that is wrong; on the contrary, the wings could be said to resemble baldish belts. Few can name a cystoid enemy that isn't a falsest relative. 
-    </p>
-    <p> 
+    </Paragraph>
+    <Paragraph> 
       Those undershirts are nothing more than paperbacks. A booklet is a helmet's postbox.
-    </p>
+    </Paragraph>
   </div>
 );
