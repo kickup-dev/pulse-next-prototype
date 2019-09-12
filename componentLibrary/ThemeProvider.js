@@ -3,7 +3,7 @@ import { mapValues } from 'lodash';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import tokens from '../node_modules/@kickup/pulse-style-tokens/dist';
+import tokens from '@kickup/pulse-style-tokens/';
 
 const findContrastingColor = color => (
   chroma(color).luminance() >= 0.5

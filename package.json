@@ -1,7 +1,8 @@
 {
-  "name": "next-styled-theme",
+  "name": "pulse-next-prototype",
   "version": "0.0.1",
-  "description": "A template for using Next.js with theming for styled-components",
+  "description": "The next iteration of our design prototype",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "dev": "next",
@@ -18,7 +19,7 @@
   "author": "jsumnersmith@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "@kickup/pulse-style-tokens": "0.0.17",
+    "@kickup/pulse-style-tokens": "0.0.19",
     "chroma-js": "^2.0.6",
     "lodash": "^4.17.15",
     "next": "^9.0.5",
