@@ -26,7 +26,8 @@ const Avatar = ({
     src={src}
     css={{
       borderRadius: '50%',
-      ...sizeLookup[size],
+      height: sizeLookup[size].height,
+      width: sizeLookup[size].width,
     }}
   />
 );
