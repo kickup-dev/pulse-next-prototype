@@ -1,13 +1,15 @@
 import { Heading, Paragraph } from '../componentLibrary/text';
+import { ContentBlock } from '../componentLibrary/layout';
 
 export default () => (
-  <div>
-    <Heading>Hello World</Heading>
+  <ContentBlock
+    headingText="Hello World"
+  >
     <Paragraph>
-      Unfortunately, that is wrong; on the contrary, the wings could be said to resemble baldish belts. Few can name a cystoid enemy that isn't a falsest relative. 
+      Unfortunately, that is wrong; on the contrary, the wings could be said to resemble baldish belts. Few can name a cystoid enemy that isn't a falsest relative.
     </Paragraph>
-    <Paragraph> 
+    <Paragraph>
       Those undershirts are nothing more than paperbacks. A booklet is a helmet's postbox.
     </Paragraph>
-  </div>
+  </ContentBlock>
 );
