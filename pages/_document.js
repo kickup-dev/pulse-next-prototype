@@ -1,7 +1,5 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet, ThemeProvider } from 'styled-components';
-import { Reset } from 'styled-reset';
-import theme from '../theme';
+import Document from 'next/document'
+import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
   static async getInitialProps (ctx) {
@@ -28,21 +26,5 @@ export default class MyDocument extends Document {
       sheet.seal()
     }
   }
-
-  render () {
-    return (
-      <Html>
-        <Head>
-          {/* Add any external CDN dependencies here. */}
-        </Head>
-        <body>
-          <Reset />
-          <ThemeProvider theme={theme}>
-            <Main />
-          </ThemeProvider>
-          <NextScript />
-        </body>
-      </Html>
-    )
-  }
 }
+
