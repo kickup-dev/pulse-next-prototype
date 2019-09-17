@@ -3,7 +3,7 @@ import React from 'react';
 import { Box } from 'rebass';
 import { css } from 'styled-components';
 
-import { ContentBlock } from 'ComponentLibrary/layout';
+import { ContentBlock } from '../../layout';
 
 import { Icon } from '../../icon';
 import ModalWrapper from './ModalWrapper';
