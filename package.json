@@ -13,7 +13,7 @@
   "author": "jsumnersmith@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "@kickup/pulse-style-tokens": "0.0.20",
+    "@kickup/pulse-style-tokens": "0.0.18",
     "@zeit/next-css": "^1.0.1",
     "chroma-js": "^2.0.6",
     "classnames": "^2.2.6",
@@ -33,6 +33,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-pro": "^5.10.2",
     "@zeit/next-sass": "^1.0.1",
+    "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-styled-components": "^1.10.6",
     "file-loader": "^4.2.0",
     "next-compose": "0.0.2",

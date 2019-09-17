@@ -44,7 +44,6 @@ const transpileConfig = {
   ]
 }
 
-//N.B. This should work but doesn't...
 const nextConfig = {
   webpack (config) {
     config.resolve.alias['ComponentLibrary'] = path.join(__dirname, 'componentLibrary');
