@@ -27,4 +27,11 @@ css={{
 ```
 
 ## Deploying Changes
--- Coming Soon --
+We're hosting the prototype on Now from Zeit. To deploy changes to the app you can either:
+- Push changes to `master` on Github or
+- Use the Now CLI to push changes directly using the `now` command
+
+### Testing vs. Prod deploys
+Any changes that are pushed to the master branch will automatically be published as the production version of the application. Additionally, any changes pushed through the CLI with the `--prod` flag will also go directly to the production version.
+
+If you'd like to test something without it being deployed as the production app, use the `now` CLI with the `--prod` flag (and a non-proudction URL will be generated).
