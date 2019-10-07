@@ -1,0 +1,13 @@
+{
+  "name": "pulse-next-prototype",
+  "version": 2,
+  "public": true,
+  "build": {
+    "env": {
+      "NPM_RC": "@npm_rc"
+    }
+  },
+  "builds": [
+    { "src": "package.json", "use": "@now/next" }
+  ]
+}
