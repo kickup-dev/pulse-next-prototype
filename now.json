@@ -1,6 +1,7 @@
 {
   "name": "pulse-next-prototype",
   "version": 2,
+  "scope": "kickup",
   "public": true,
   "build": {
     "env": {
