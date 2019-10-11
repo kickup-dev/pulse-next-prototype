@@ -9,7 +9,7 @@ import RegistrationType from '../../components/RegistrationTypes/RegistrationTyp
 export default () => (
   <Wrapper>
     <ContentBlock
-      heading="Mulitple Types"
+      headingText="Mulitple Types"
     >
       <Section
         accentColor="blue"
@@ -44,7 +44,7 @@ export default () => (
 
     <ContentBlock
       mt={6}
-      heading="Single Type"
+      headingText="Single Type"
     >
       <Section
         accentColor="blue"
