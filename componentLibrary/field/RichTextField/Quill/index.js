@@ -1,7 +1,7 @@
 import React from 'react';
 import { asyncComponent } from 'react-async-component';
 
-import ErrorComponent from '../../../../ErrorComponent';
+// import ErrorComponent from '../../../../ErrorComponent';
 
 const component = asyncComponent({
   resolve: () => new Promise(resolve =>
@@ -13,7 +13,7 @@ const component = asyncComponent({
       'quillAsync',
     ),
   ),
-  ErrorComponent: e => (<ErrorComponent error={e} />),
+  ErrorComponent: e => (<div>{e}</div>),
 });
 
 export default component;

@@ -50,6 +50,7 @@ const Button = ({
       display: inline-block;
       vertical-align: middle;
       font-family: ${({ theme }) => theme.fonts.default};
+      font-size: ${({theme, size}) => theme.fontSizes[sizeLookup[size]]}px;
       letter-spacing: 1px;
       line-height: ${({ theme }) => theme.lineHeights[1]} !important;
       cursor: pointer;

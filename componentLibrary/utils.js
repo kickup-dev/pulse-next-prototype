@@ -1,5 +1,5 @@
 import chroma from 'chroma-js';
-import { get } from 'lodash';
+import { get, xor } from 'lodash';
 
 /**
  * Adjusts a given color's luminance so that it is appropriately (according to
@@ -48,3 +48,11 @@ export const pickColor = (props, colorKey = 'color') => (
 export const pickContrastingColor = (props, colorKey = 'color') => (
   get(props, `theme.contrastingColors.${get(props, colorKey)}`)
 );
+
+/**
+ * @param {Array} input The array to operate on.
+ * @param {*} element The element to either add or remove.
+ * @returns {Array} The new array with the element's presence toggled.
+ */
+export const toggleElement = (input, element) => xor(input, [element]);
+

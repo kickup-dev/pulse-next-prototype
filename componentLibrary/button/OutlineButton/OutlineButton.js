@@ -9,6 +9,7 @@ const OutlineButton = props => (
   <Button
     bg="transparent"
     borderColor={props.color}
+    borderStyle="solid"
     {...props}
     css={`
       &, &:active, &:focus, &:hover {
