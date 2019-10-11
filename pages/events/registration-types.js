@@ -1,5 +1,6 @@
 import { Paragraph } from '../../componentLibrary/text';
-import { ContentBlock, Section, Subsection } from '../../componentLibrary/layout';
+import { ContentBlock, Section } from '../../componentLibrary/layout';
+import { Button, OutlineButton } from '../../componentLibrary/button';
 
 import Wrapper from '../../components/Wrapper';
 import Ghost from '../../components/Ghost';
@@ -8,6 +9,7 @@ import RegistrationType from '../../components/RegistrationTypes/RegistrationTyp
 export default () => (
   <Wrapper>
     <ContentBlock
+      heading="Mulitple Types"
     >
       <Section
         accentColor="blue"
@@ -29,6 +31,40 @@ export default () => (
           title="Non-SVVSD Staff"
           description="For teachers and staff outside of the St. Vrain Valley School District"
         />
+        <OutlineButton color="grayMedium" mt={3}>Add Registration Type</OutlineButton>
+      </Section>
+      <Section
+        accentColor="grayLight"
+        headingIcon="cog"
+        headingText="Advanced Settings"
+      >
+        <Ghost />
+      </Section>
+    </ContentBlock>
+
+    <ContentBlock
+      mt={6}
+      heading="Single Type"
+    >
+      <Section
+        accentColor="blue"
+        headingIcon="calendar-alt"
+        headingText="Details"
+      >
+        <Ghost />
+      </Section>
+      <Section
+        accentColor="green"
+        headingIcon="ticket-alt"
+        headingText="Registration Settings"
+      >
+        <RegistrationType
+          title=" "
+          description=""
+          initialView="edit"
+          showButtons={false}
+        />
+        <OutlineButton color="grayMedium" mt={3}>Add Registration Type</OutlineButton>
       </Section>
       <Section
         accentColor="grayLight"

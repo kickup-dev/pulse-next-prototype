@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Flex } from 'rebass';
 
-import { toggleElement } from '../../../utils/utils';
+import { toggleElement } from '../../utils';
 
 import Fieldset from '../Fieldset';
 
