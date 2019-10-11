@@ -62,7 +62,7 @@ export default () => (
           title=" "
           description=""
           initialView="edit"
-          showButtons={false}
+          singleton={true}
         />
         <OutlineButton color="grayMedium" mt={3}>Add Registration Type</OutlineButton>
       </Section>

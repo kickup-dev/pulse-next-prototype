@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import styled from 'styled-components';
 import { Flex, Box } from 'rebass';
 
@@ -63,23 +63,28 @@ const EditView = ({
   hours,
   price,
   clickHandler,
-  showButtons}) => (
+  singleton}) => (
   <div>
-    <Flex>
-      <Box flexGrow={1}>
-        <Heading size="small" mt={3} mb={3}>{title ? title : 'Create New'}</Heading>
-      </Box>
-      <Box ph={3}>
-        {showButtons && <GhostButton icon="trash" color="grayMedium"></GhostButton>}
-      </Box>
-    </Flex>
+    { !singleton &&
+      <Flex>
+        <Box flexGrow={1}>
+          <Heading size="small" mt={3} mb={3}>{title ? title : 'Create New'}</Heading>
+        </Box>
+        <Box ph={3}>
+          <GhostButton icon="trash" color="grayMedium"></GhostButton>
+        </Box>
+      </Flex>
+    }
     <Box>
-      <Label>Registration Type Name</Label>
-      <Input />
+      { !singleton &&
+        <Fragment>
+          <Label>Registration Type Name</Label>
+          <Input />
 
-      <Label>Description</Label>
-      <TextArea input={{name: 'description'}} meta={{form: 'random'}}/>
-
+          <Label>Description</Label>
+          <TextArea input={{name: 'description'}} meta={{form: 'random'}}/>
+        </Fragment>
+      }
       <ChoicesField
         allowMultiple={null}
         choices={[{label: 'Yes',value: true},{label: 'No',value: false}]}
@@ -111,7 +116,7 @@ const EditView = ({
       />
 
     </Box>
-    {showButtons &&
+    {!singleton &&
       <Box width={1} pt={3}>
         <Flex justifyContent="center" >
           <OutlineButton onClick={clickHandler} color="grayDark" mr={1}>Cancel</OutlineButton>
