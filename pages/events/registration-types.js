@@ -26,6 +26,11 @@ export default () => (
         <RegistrationType
           title="SVVSD Staff"
           description="For teachers and staff employed by St. Vrain Valley School District"
+          credits={[
+            {name: "Awesome Credit", value: 3},
+            { name: "Other Credit", value: 6}
+          ]}
+          hours="567 Hours"
         />
         <RegistrationType
           title="Non-SVVSD Staff"
