@@ -14,7 +14,6 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props
     return (
       <Fragment>
-        <Reset />
         <ThemeProvider theme={theme}>
           <Component {...pageProps} />
         </ThemeProvider>
