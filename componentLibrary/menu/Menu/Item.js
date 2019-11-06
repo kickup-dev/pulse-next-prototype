@@ -26,9 +26,9 @@ const Item = ({
 }) => (
   <li
     css={`
-      &:not(:first-child) {
+      /*&:not(:first-child) {
         border-top: 1px solid ${({ theme }) => theme.colors.grayLight};
-      }
+      }*/
     `}
   >
     <Text

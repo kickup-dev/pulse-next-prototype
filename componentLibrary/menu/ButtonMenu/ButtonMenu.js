@@ -120,5 +120,6 @@ ButtonMenu.defaultProps = {
 };
 
 ButtonMenu.ConfirmDeletionModalItem = Menu.ConfirmDeletionModalItem;
+ButtonMenu.Heading = Menu.Heading;
 ButtonMenu.Item = Menu.Item;
 ButtonMenu.ModalItem = Menu.ModalItem;

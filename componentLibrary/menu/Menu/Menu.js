@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from 'rebass';
 
 import ConfirmDeletionModalItem from './ConfirmDeletionModalItem';
+import Heading from './Heading';
 import Item from './Item';
 import ModalItem from './ModalItem';
 
@@ -27,6 +28,7 @@ const Menu = React.forwardRef((props, ref) => (
 ));
 
 Menu.ConfirmDeletionModalItem = ConfirmDeletionModalItem;
+Menu.Heading = Heading;
 Menu.Item = Item;
 Menu.ModalItem = ModalItem;
 
