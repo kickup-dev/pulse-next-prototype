@@ -12,6 +12,13 @@ const sizeLookup = {
   lg: { fontSize: 2, px: 5, py: 4 },
 };
 
+const fontSize = {
+  sm: 0,
+  md: 0,
+  lg: 2
+};
+
+
 const deriveAs = ({ href, to }) => {
   if (href) {
     return 'a';
@@ -50,7 +57,7 @@ const Button = ({
       display: inline-block;
       vertical-align: middle;
       font-family: ${({ theme }) => theme.fonts.default};
-      font-size: ${({theme, size}) => theme.fontSizes[sizeLookup[size]]}px;
+      font-size: ${({theme, size}) => size == 'lg' ? theme.fontSizes[1] : theme.fontSizes[0]}px;
       letter-spacing: 1px;
       line-height: ${({ theme }) => theme.lineHeights[1]} !important;
       cursor: pointer;

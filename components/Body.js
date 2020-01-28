@@ -4,7 +4,7 @@ import '@fortawesome/fontawesome-pro/css/all.css';
 
 const Body = styled.div`
   position: relative;
-  background: ${({theme}) => theme.colors.grayLight};
+  background: ${({theme}) => theme.colors.white};
   min-height: 100vh;
   min-width: 100vw;
   padding-top: 100px;

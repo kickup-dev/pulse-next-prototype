@@ -1,11 +1,22 @@
+import { Flex } from 'rebass';
 import { Heading, Paragraph, Meta } from '../componentLibrary/text';
-import { ContentBlock } from '../componentLibrary/layout';
+import ContentBlock from '../components/ContentBlock';
 import { ButtonMenu } from '../componentLibrary/menu';
 
+import Count from '../components/Count';
 import Wrapper from '../components/Wrapper';
+import Banner from '../components/Banner';
 
 export default () => (
   <Wrapper>
+    <Banner
+      icon="magic"
+      title="Here is an important message"
+      body="Some assert that the unwarmed color reveals itself as an oozing karen to those who look."
+    />
+    <Heading size={"lg"} my={6}>Welcome back, Todd!</Heading>
+
+    <Flex alignItems="center" mb={4}><Heading size={"md"} mr={3}>Todos</Heading><Count>9</Count></Flex>
     <ContentBlock
       headingText="Hello World"
     >
