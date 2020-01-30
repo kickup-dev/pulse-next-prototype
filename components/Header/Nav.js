@@ -15,6 +15,7 @@ const slideIn = keyframes`
 
 const Nav = styled.nav`
   position: fixed;
+  z-index: 1;
   top: 62px;
   min-height: 100vh;
   min-width: 250px;
@@ -25,6 +26,7 @@ const Nav = styled.nav`
 `
 const NavMenu = styled(Menu)`
   box-shadow: none;
+  border: none;
   a { text-decoration: none; }
 `
 
