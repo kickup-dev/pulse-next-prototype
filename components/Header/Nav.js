@@ -1,7 +1,5 @@
 import styled, {keyframes} from 'styled-components';
-import menu from '../../menu.js'
-
-import { Menu } from '../../componentLibrary/menu';
+import MenuItem from './MenuItem.js';
 
 const slideIn = keyframes`
   from {
@@ -17,26 +15,67 @@ const Nav = styled.nav`
   position: fixed;
   box-sizing: border-box;
   z-index: 1;
-  top: 62px;
+  top: 74px;
   min-height: 100vh;
   min-width: 250px;
+  padding: ${({theme}) => theme.space[2]}px;
   overflow: scroll;
   background: ${({theme}) => theme.colors.grayLight};
   border-right: ${({theme}) => `1px solid ${theme.colors.grayLight}`};
-  animation: ${slideIn} .1s linear;
+  /* animation: ${slideIn} .1s linear; */
 `
-const NavMenu = styled(Menu)`
-  box-shadow: none;
-  border: none;
-  a { text-decoration: none; }
-`
+var structure = [
+  {
+    title: "Home",
+    icon: "home",
+    match: "/$",
+    href: "/"
+  },
+  {
+    title: "Reports",
+    icon: "file-alt",
+    match: "/reports",
+    href: "/reports",
+  },
+  {
+    title: "Browse",
+    icon: "search",
+    match: "/reports/browse",
+    href: "/reports/browse",
+  },
+  {
+    title: "Events",
+    icon: "calendar",
+    match: "/events",
+    href: "/events"
+  },
+  {
+    title: "Walkthroughs",
+    icon: "clipboard-list",
+    match: "/walkthroughs",
+    href: "/walkthroughs"
+  },
+  {
+    title: "Microcredentials",
+    icon: "medal",
+    match: "/microcredentials",
+    href: "/microcredentials"
+  },
+];
+
 
 export default ({children}) => (
   <Nav>
-    <NavMenu>
       {
-        menu.pages.map(page => <Menu.Item icon={page.icon} href={page.path} key={page.path}>{page.name}</Menu.Item>)
+        structure.map((page, i) => {
+          return <MenuItem
+            key={i}
+            icon={page.icon}
+            href={page.href}
+            match={page.match}
+          >{page.title}
+          </MenuItem>
+        })
       }
-    </NavMenu>
   </Nav>
 )
