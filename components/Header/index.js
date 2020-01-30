@@ -1,4 +1,3 @@
-import { useState} from 'react';
 import styled from 'styled-components';
 import MenuToggle from './MenuToggle';
 import Profile from './Profile';
@@ -22,19 +21,14 @@ const Header = styled.header`
   }
 `
 
-const Logo = styled.img`
-  width: auto;
-  height: 34px;
-  align-self: center;
-`;
+
 
 
 export default ({menuOpen, setMenuOpen}) => {
   return (
     <React.Fragment>
       <Header>
-        <MenuToggle onClick={() => setMenuOpen(!menuOpen)}/>
-        <Logo src='/static/logo.png' alt="Kickup Logo"/>
+        <MenuToggle menuOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}/>
         <Profile />
       </Header>
       {

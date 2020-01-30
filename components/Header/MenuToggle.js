@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { Icon } from '../../componentLibrary/icon';
-import { Meta } from '../../componentLibrary/text';
 
 const MenuToggle = styled.button`
   display: flex;
   height: 100%;
   min-height: 62px;
+  min-width: 250px;
   border: none;
   align-items: center;
   border-right: 1px solid ${({theme})=> theme.colors.grayLight};
@@ -14,8 +14,15 @@ const MenuToggle = styled.button`
   cursor: pointer;
 `
 
-export default ({onClick}) => (
+const Logo = styled.img`
+  width: auto;
+  height: 34px;
+  align-self: center;
+`;
+
+export default ({menuOpen, onClick}) => (
   <MenuToggle onClick={onClick}>
-    <Meta mr={2}>Menu</Meta> <Icon icon="bars"/>
+  <Icon icon={menuOpen ? "chevron-left" : "bars"}/>  <Logo src='/static/logo.png' alt="Kickup Logo"/>
+
   </MenuToggle>
 )

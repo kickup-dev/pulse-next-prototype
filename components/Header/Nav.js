@@ -15,13 +15,14 @@ const slideIn = keyframes`
 
 const Nav = styled.nav`
   position: fixed;
+  box-sizing: border-box;
   z-index: 1;
   top: 62px;
   min-height: 100vh;
   min-width: 250px;
   overflow: scroll;
-  background: ${({theme}) => theme.colors.white};
-  border-right: ${({theme}) => `2px solid ${theme.colors.grayLight}`};
+  background: ${({theme}) => theme.colors.grayLight};
+  border-right: ${({theme}) => `1px solid ${theme.colors.grayLight}`};
   animation: ${slideIn} .1s linear;
 `
 const NavMenu = styled(Menu)`
