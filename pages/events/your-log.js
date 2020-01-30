@@ -1,7 +1,8 @@
 import Wrapper from '../../components/Wrapper';
+import Heading from '../../componentLibrary/text/Heading';
 
 export default () => (
   <Wrapper>
-    <h1>Your Log</h1>
+    <Heading>Your Log</Heading>
   </Wrapper>
 );

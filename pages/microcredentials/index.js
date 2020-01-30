@@ -1,7 +1,8 @@
 import Wrapper from '../../components/Wrapper';
+import Heading from '../../componentLibrary/text/Heading';
 
 export default () => (
   <Wrapper>
-    <h1>Microcredentials</h1>
+    <Heading>Microcredentials</Heading>
   </Wrapper>
 );

@@ -1,4 +1,5 @@
-export default [{
+export default [
+    {
         title: "Home",
         icon: "home",
         match: "/$",
@@ -9,6 +10,7 @@ export default [{
         icon: "file-alt",
         match: "/reports",
         href: "/reports/browse",
+        redirectsToChild: true,
         children: [{
                 title: "Browse",
                 icon: "search",
@@ -27,24 +29,25 @@ export default [{
         title: "Events",
         icon: "calendar",
         match: "/events",
-        href: "/events",
+        href: "/events/browse",
+        redirectsToChild: true,
         children: [{
             title: "Browse",
             icon: "search",
-            match: "/events",
-            href: "/events",
+            match: "/events/browse",
+            href: "/events/browse",
         },
         {
             title: "Your Log",
             icon: "share",
-            match: "/events",
-            href: "/events",
+            match: "/events/your-log",
+            href: "/events/your-log",
         },
         {
             title: "Manage",
             icon: "cog",
-            match: "/events",
-            href: "/events",
+            match: "/events/manage",
+            href: "/events/manage",
         }
     ]
     },
@@ -62,20 +65,20 @@ export default [{
         children: [{
             title: "Browse",
             icon: "search",
-            match: "/microcredentials",
-            href: "/microcredentials",
+            match: "/microcredentials/browse",
+            href: "/microcredentials/browse",
         },
         {
             title: "My Submissions",
-            icon: "form",
-            match: "/microcredentials",
-            href: "/microcredentials",
+            icon: "clipboard",
+            match: "/microcredentials/my-submissions",
+            href: "/microcredentials/my-submissions",
         },
         {
             title: "Submissions",
-            icon: "form",
-            match: "/microcredentials",
-            href: "/microcredentials",
+            icon: "clipboard",
+            match: "/microcredentials/submissions",
+            href: "/microcredentials/submissions",
         }
     ]
     },

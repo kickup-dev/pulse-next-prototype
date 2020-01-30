@@ -1,7 +1,8 @@
 import Wrapper from '../../components/Wrapper';
+import Heading from '../../componentLibrary/text/Heading';
 
 export default () => (
   <Wrapper>
-    <h1>Shared Links</h1>
+    <Heading>Shared Links</Heading>
   </Wrapper>
 );

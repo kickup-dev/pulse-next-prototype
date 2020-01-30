@@ -3,6 +3,6 @@ import Heading from '../../componentLibrary/text/Heading';
 
 export default () => (
   <Wrapper>
-    <Heading>Browse Reports</Heading>
+    <Heading>My Submissions</Heading>
   </Wrapper>
 );

@@ -3,30 +3,37 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import tokens from '@kickup/pulse-style-tokens/';
 
-const {colors} = tokens;
-
 const MenuItem = styled.a`
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 12px 16px;
+    padding: 10px 8px;
     border-radius: 4px;
     margin-bottom: 2px;
     ${({child}) => child ? `margin-left: 32px;` : ``}
     
-    color: ${colors.grayDark};
+    color: ${({ theme, active }) => active ? theme.colors.grayDark : "#55666F"};
     text-decoration: none;
     font-family: "Nunito Sans", "Helvetica", sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     transition-duration: .1s;
     
     cursor: pointer;
 
     font-weight: ${({active}) => active ? "800" : "initial"};
-    background: ${({hasChildren, active}) => !hasChildren && active ? "#D9E0E3" : "initial"};
+    background: ${({active, hasChildren, redirectsToChild}) => {
+        if (active && !hasChildren) {
+            return "#D9E0E3";
+        } else if (active && !redirectsToChild) { // if it has it's own top level landing page
+            return "#D9E0E3";
+        } else {
+            return "initial";
+        }
+    }};
 
     &:hover {
         background: #D9E0E3;
+        background: rgba(217,224,227,.5);
         transition-duration: 0s;
     }
 `;
@@ -39,11 +46,12 @@ export default (props) => {
     const router = useRouter();
     const re = new RegExp(props.match);
     let isActive = re.test(router.pathname);
-    
+
     return (
         <MenuItem
             active={isActive}
             {...props}
+            redirectsToChild={props.redirectsToChild == null ? false : props.redirectsToChild}
             >
             <Icon
                 icon={props.icon}
