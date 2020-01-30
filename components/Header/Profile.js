@@ -38,9 +38,9 @@ const getExitTimeout = ({ timeout }) => (
 const UserMenu = styled.div`
   list-style: none;
   position: absolute;
-  width: 200px;
-  right: 5px; //find right space
-  top: calc(100% + 10px);
+  min-width: 250px;
+  right: ${({theme})=> theme.space[3]}px;
+  top: calc(100% + ${({theme})=> theme.space[3]}px);
   background: white;
   box-shadow: ${({theme})=> `0 4px 20px ${chroma(theme.colors.grayDark).alpha(.2).css()}`} ; ;
   border-radius: 4px;
