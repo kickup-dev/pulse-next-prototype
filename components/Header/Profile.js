@@ -14,7 +14,7 @@ const UserDetails = styled.div`
 
 export default () => (
   <Profile p={4}>
-    <Avatar size="lg" src="https://randomuser.me/api/portraits/lego/1.jpg"/>
+    <Avatar size="lg" src="https://i.pravatar.cc/42?img=63"/>
     <UserDetails>
       <Heading mb={2}size={'sm'}>User Name</Heading>
       <Meta ml={1}>Sample District</Meta>
