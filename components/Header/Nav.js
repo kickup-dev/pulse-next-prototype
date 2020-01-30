@@ -34,7 +34,7 @@ export default ({children}) => (
   <Nav>
     <NavMenu>
       {
-        menu.pages.map(page => <Menu.Item icon={page.icon} href={page.path}>{page.name}</Menu.Item>)
+        menu.pages.map(page => <Menu.Item icon={page.icon} href={page.path} key={page.path}>{page.name}</Menu.Item>)
       }
     </NavMenu>
   </Nav>

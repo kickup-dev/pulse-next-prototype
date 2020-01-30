@@ -29,8 +29,7 @@ const Logo = styled.img`
 `;
 
 
-export default () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+export default ({menuOpen, setMenuOpen}) => {
   return (
     <React.Fragment>
       <Header>
