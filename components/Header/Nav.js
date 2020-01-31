@@ -1,8 +1,9 @@
+import { Fragment } from 'react';
 import styled, {keyframes} from 'styled-components';
-import menu from '../../menu.js'
-
-import { Menu } from '../../componentLibrary/menu';
-
+import { useRouter } from 'next/router';
+import MenuItem from './MenuItem.js';
+import structure from './navStructure.js';
+// console.clear();
 const slideIn = keyframes`
   from {
     transform: translateX(-300px);
@@ -12,31 +13,81 @@ const slideIn = keyframes`
     transform: translateX(0px);
   }
 `;
-
 const Nav = styled.nav`
   position: fixed;
   box-sizing: border-box;
   z-index: 1;
-  top: 62px;
+  top: 72px;
   min-height: 100vh;
   min-width: 250px;
+  padding: ${({theme}) => theme.space[3]}px;
   overflow: scroll;
   background: ${({theme}) => theme.colors.grayLight};
+  background: #F0F3F5;
   border-right: ${({theme}) => `1px solid ${theme.colors.grayLight}`};
-  animation: ${slideIn} .1s linear;
+  /* animation: ${slideIn} .1s linear; */
 `
-const NavMenu = styled(Menu)`
-  box-shadow: none;
-  border: none;
-  a { text-decoration: none; }
-`
+const ChildrenContainer = styled.div`
+  height: ${({open}) => open ? "initial" : "0px"};
+  overflow: hidden;
+`;
+const CollapsableMenuItem = (props) => {
+  let {page} = props;
+
+  const router = useRouter();
+  const re = new RegExp(page.match);
+  let isActive = re.test(router.pathname);
+
+  return (
+    <Fragment>
+       <MenuItem
+          hasChildren={true}
+          redirectsToChild={page.redirectsToChild}
+          icon={page.icon}
+          href={page.href}
+          match={page.match}
+          title={page.title}
+        >{page.title}
+      </MenuItem>
+      <ChildrenContainer open={isActive}>
+        {
+          props.childrenNav.map((page, i) => {
+            return <MenuItem
+                key={i}
+                child={true}
+                icon={page.icon}
+                href={page.href}
+                match={page.match}
+                title={page.title}
+              >{page.title}
+            </MenuItem>
+          })
+        }
+      </ChildrenContainer>
+    </Fragment>
+  )
+}
 
 export default ({children}) => (
   <Nav>
-    <NavMenu>
       {
-        menu.pages.map(page => <Menu.Item icon={page.icon} href={page.path} key={page.path}>{page.name}</Menu.Item>)
+        structure.map((page, i) => {
+          if (page.children) {
+            return <CollapsableMenuItem
+              key={i}
+              page={page}
+              childrenNav={page.children}
+            />
+          } else {
+            return <MenuItem
+              key={i}
+              icon={page.icon}
+              href={page.href}
+              match={page.match}
+            >{page.title}
+            </MenuItem>
+          }
+        })
       }
-    </NavMenu>
   </Nav>
 )
