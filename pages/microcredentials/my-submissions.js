@@ -1,8 +1,9 @@
 import Wrapper from '../../components/Wrapper';
 import Heading from '../../componentLibrary/text/Heading';
+import ContentBlock from '../../components/ContentBlock';
 
 export default () => (
   <Wrapper>
-    <Heading>My Submissions</Heading>
+    <ContentBlock><Heading>My Submissions</Heading></ContentBlock>
   </Wrapper>
 );

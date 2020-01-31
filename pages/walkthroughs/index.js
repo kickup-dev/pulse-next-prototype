@@ -4,6 +4,6 @@ import ContentBlock from '../../components/ContentBlock';
 
 export default () => (
   <Wrapper>
-    <ContentBlock><Heading>Manage Events</Heading></ContentBlock>
+    <ContentBlock><Heading>Walkthroughs</Heading></ContentBlock>
   </Wrapper>
 );

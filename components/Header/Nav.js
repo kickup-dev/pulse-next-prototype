@@ -17,7 +17,7 @@ const Nav = styled.nav`
   position: fixed;
   box-sizing: border-box;
   z-index: 1;
-  top: 74px;
+  top: 72px;
   min-height: 100vh;
   min-width: 250px;
   padding: ${({theme}) => theme.space[3]}px;
@@ -37,7 +37,7 @@ const CollapsableMenuItem = (props) => {
   const router = useRouter();
   const re = new RegExp(page.match);
   let isActive = re.test(router.pathname);
-  
+
   return (
     <Fragment>
        <MenuItem

@@ -58,6 +58,18 @@ export default [
         href: "/walkthroughs"
     },
     {
+        title: "Coaching",
+        icon: "compass",
+        match: "/coaching",
+        href: "/coaching"
+    },
+    {
+        title: "Evaluations",
+        icon: "comment-check",
+        match: "/evaluations",
+        href: "/evaluations",
+    },
+    {
         title: "Microcredentials",
         icon: "medal",
         match: "/microcredentials",

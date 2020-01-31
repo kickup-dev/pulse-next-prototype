@@ -1,7 +1,7 @@
 import { Icon } from '../../componentLibrary/icon';
 import styled from 'styled-components';
 import { useRouter } from 'next/router';
-import tokens from '@kickup/pulse-style-tokens/';
+import Link from 'next/link';
 
 const MenuItem = styled.a`
     display: flex;
@@ -11,13 +11,13 @@ const MenuItem = styled.a`
     border-radius: 4px;
     margin-bottom: 2px;
     ${({child}) => child ? `margin-left: 32px;` : ``}
-    
+
     color: ${({ theme, active }) => active ? theme.colors.grayDark : "#55666F"};
     text-decoration: none;
     font-family: "Nunito Sans", "Helvetica", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     transition-duration: .1s;
-    
+
     cursor: pointer;
 
     font-weight: ${({active}) => active ? "800" : "initial"};
@@ -48,19 +48,21 @@ export default (props) => {
     let isActive = re.test(router.pathname);
 
     return (
-        <MenuItem
-            active={isActive}
-            {...props}
-            redirectsToChild={props.redirectsToChild == null ? false : props.redirectsToChild}
-            >
-            <Icon
-                icon={props.icon}
-                iconWeight={isActive ? "solid" : "regular"}
-                css={`
-                width: 20px;
-                text-align: center;
-            `}/>
-            <MenuLabel>{props.children}</MenuLabel>
-        </MenuItem>
+        <Link href={props.href}>
+            <MenuItem
+                active={isActive}
+                {...props}
+                redirectsToChild={props.redirectsToChild == null ? false : props.redirectsToChild}
+                >
+                <Icon
+                    icon={props.icon}
+                    iconWeight={isActive ? "solid" : "regular"}
+                    css={`
+                    width: 20px;
+                    text-align: center;
+                `}/>
+                <MenuLabel>{props.children}</MenuLabel>
+            </MenuItem>
+        </Link>
   )
 };
