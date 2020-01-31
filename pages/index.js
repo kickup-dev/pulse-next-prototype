@@ -8,7 +8,7 @@ import Wrapper from '../components/Wrapper';
 import Banner from '../components/Banner';
 
 export default () => (
-  <Wrapper activePage="home">
+  <Wrapper>
     <Banner
       icon="magic"
       title="Here is an important message"
