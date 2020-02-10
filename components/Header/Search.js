@@ -58,15 +58,14 @@ const ResultCount = styled(Meta)`
 
 const ResultsSet = ({resultType, icon, results}) => {
     return (
-        <Box mb={4}>
+        <Box mb={4} css={`flex: 50%;`}>
             <Meta mb={3}>{resultType}</Meta>
             {
                 results.map(result => {
-                    return <Flex alignItems="flex-start" mb={3}>
+                    return <Flex alignItems="center" mb={3}>
                         {icon && <Icon icon={icon} color={'grayMedium'}/>}
                         <Box ml={3}>
-                            <Paragraph>{result.name}</Paragraph>
-                            <Paragraph color={"grayMedium"}>{result.metadata}</Paragraph>
+                            <Paragraph>{result.name} <span style={{opacity: .5, fontSize: 14}}>{result.metadata}</span></Paragraph>
                         </Box>
                     </Flex>
                 })
@@ -79,12 +78,6 @@ const ResultsPane = ({results}) => {
     console.log(results)
     return (
         <Pane>
-            <PaneLeft>
-                {(results.users && results.users.length > 0) && <ResultCount>People ({results.users.length})</ResultCount>}
-                {(results.events && results.events.length > 0) && <ResultCount>Events ({results.events.length})</ResultCount>}
-                {(results.reports && results.reports.length > 0) && <ResultCount>Reports ({results.reports.length})</ResultCount>}
-                {(results.forms && results.forms.length > 0) && <ResultCount>Forms ({results.forms.length})</ResultCount>}
-            </PaneLeft>
             <PaneRight>
                 {(results.users && results.users.length > 0) && <ResultsSet resultType="People" results={results.users}/>}
                 {(results.events && results.events.length > 0) && <ResultsSet resultType="Events" icon="calendar-alt" results={results.events}/>}
