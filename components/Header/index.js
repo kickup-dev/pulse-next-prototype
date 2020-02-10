@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import MenuToggle from './MenuToggle';
 import Profile from './Profile';
+import Search from './Search';
 import Nav from './Nav';
 
 const Header = styled.header`
@@ -29,6 +30,7 @@ export default ({menuOpen, setMenuOpen}) => {
     <React.Fragment>
       <Header>
         <MenuToggle menuOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}/>
+        <Search />
         <Profile />
       </Header>
       {
